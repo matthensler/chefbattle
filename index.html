@@ -632,7 +632,7 @@
       <li><a href="#industry-recognition">Partners</a></li>
       <li><a href="#step-into-our-kitchen">Contact</a></li>
     </ul>
-    <a href="mailto:hello@hoptoit.events" class="nav-cta">Enter the Battle</a>
+    <a href="/cdn-cgi/l/email-protection#3159545d5d5e71595e41455e58451f5447545f4542" class="nav-cta">Enter the Battle</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -644,7 +644,7 @@
     <a href="#format" class="mobile-link">Format</a>
     <a href="#judging-framework" class="mobile-link">Judging</a>
     <a href="#industry-recognition" class="mobile-link">Partners</a>
-    <a href="mailto:hello@hoptoit.events" class="mobile-cta">Enter the Battle</a>
+    <a href="/cdn-cgi/l/email-protection#4e262b2222210e26213e3a21273a602b382b203a3d" class="mobile-cta">Enter the Battle</a>
   </div>
 
   <!-- HERO -->
@@ -658,7 +658,7 @@
         Chef Battle is the live culinary competition tour — real chefs, real pressure, real crowds, in 20+ markets nationwide.
       </p>
       <div class="hero-actions">
-        <a href="mailto:hello@hoptoit.events" class="btn-battle">🔥 Throw Your Toque in the Ring</a>
+        <a href="/cdn-cgi/l/email-protection#e189848d8d8ea1898e91958e8895cf8497848f9592" class="btn-battle">🔥 Throw Your Toque in the Ring</a>
         <a href="#format" class="btn-secondary">See How It Works</a>
       </div>
     </div>
@@ -886,8 +886,8 @@
       Whether you're a chef ready to battle or a brand looking to activate — we want to hear from you.
     </p>
     <div class="contact-actions">
-      <a href="mailto:hello@hoptoit.events" class="btn-battle">🔥 I Want to Battle</a>
-      <a href="mailto:hello@hoptoit.events" class="btn-primary">Request the Deck</a>
+      <a href="/cdn-cgi/l/email-protection#3f575a5353507f57504f4b50564b115a495a514b4c" class="btn-battle">🔥 I Want to Battle</a>
+      <a href="/cdn-cgi/l/email-protection#cfa7aaa3a3a08fa7a0bfbba0a6bbe1aab9aaa1bbbc" class="btn-primary">Request the Deck</a>
     </div>
   </section>
 
@@ -898,7 +898,7 @@
     <div class="footer-hti">A <a href="https://hoptoit.events" target="_blank">Hop To It Events</a> Production</div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -914,22 +914,36 @@
         document.body.style.overflow = '';
       });
     });
-
     // Counter animation
     function animateCounter(el, target, duration) {
       let start = 0;
-      const step = target / (duration / 16);
-      const timer = setInterval(() => {
-        start += step;
+      const increment = target / (duration / 16);
+      const timer = setInterval(function() {
+        start += increment;
         if (start >= target) {
           start = target;
           clearInterval(timer);
         }
-        const val = Math.floor(start);
-        el.textContent = val.toLocaleString() + (val >= target ? '+' : '');
+        el.textContent = Math.floor(start).toLocaleString() + (Math.floor(start) >= target ? '+' : '');
       }, 16);
     }
 
-    // Intersection Observer for counter
-    const counterEl = document.getElementById('sampleCounter');
-    const observer = new IntersectionObserv
+    // Trigger counter when visible
+    var counterEl = document.getElementById('sampleCounter');
+    if (counterEl) {
+      var triggered = false;
+      var checkVisible = function() {
+        var rect = counterEl.getBoundingClientRect();
+        if (!triggered && rect.top < window.innerHeight && rect.bottom > 0) {
+          triggered = true;
+          animateCounter(counterEl, 200000, 2000);
+        }
+      };
+      window.addEventListener('scroll', checkVisible);
+      window.addEventListener('load', checkVisible);
+      checkVisible();
+    }
+  </script>
+
+</body>
+</html>
