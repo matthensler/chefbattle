@@ -182,6 +182,7 @@
       letter-spacing:2px; text-transform:uppercase;
       background:var(--red); color:var(--white); padding:16px 36px;
       text-decoration:none; transition:background 0.2s; display:inline-block;
+      align-self: flex-start;
     }
     .btn-red:hover { background:var(--red-lt); }
     .btn-outline {
@@ -421,7 +422,8 @@
     }
     @media (max-width:480px) {
       .included-grid, .use-cases-grid { grid-template-columns:1fr; }
-      .hero-actions { flex-direction:column; }
+      .hero-actions { flex-direction:column; align-items: flex-start; }
+      .btn-red, .btn-outline { width: auto; align-self: flex-start; }
       .craft-grid { grid-template-columns: 1fr; }
       .craft-grid img { height: 220px; }
       .hero-title { font-size: 56px; }
