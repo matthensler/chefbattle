@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chef Battle Corporate Team Building | Hop To It Events</title>
+  <meta name="description" content="Chef Battle corporate team building experiences — live, high-energy culinary challenges that build real collaboration, communication, and leadership skills." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://chefbattle.events/team-building" />
+  <meta property="og:title" content="Chef Battle Corporate Team Building" />
+  <meta property="og:description" content="A live culinary team experience that builds real collaboration. Fully managed, end-to-end. On-site or off-site." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:    #0a0a0a;
+      --charcoal: #141414;
+      --deep:     #1a1a1a;
+      --panel:    #222;
+      --red:      #C0272D;
+      --red-lt:   #e03339;
+      --gold:     #D4A017;
+      --gold-lt:  #F0C040;
+      --white:    #f5f5f0;
+      --gray:     #777;
+      --gray-lt:  #aaa;
+      --border:   rgba(212,160,23,0.18);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 56px;
+      background: rgba(10,10,10,0.96);
+      border-bottom: 1px solid rgba(212,160,23,0.12);
+    }
+    .nav-logo { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:4px; color:var(--white); text-decoration:none; }
+    .nav-logo span { color:var(--red); }
+    .nav-tag { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); }
+    .nav-cta {
+      font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700;
+      letter-spacing:2px; text-transform:uppercase;
+      background:var(--red); color:var(--white); padding:10px 24px;
+      text-decoration:none; transition:background 0.2s;
+    }
+    .nav-cta:hover { background:var(--red-lt); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; position:relative; overflow:hidden;
+      display:flex; flex-direction:column;
+      background: var(--black);
+    }
+    .hero-left {
+      display:flex; flex-direction:column; justify-content:center;
+      padding: 160px 64px 100px; max-width: 860px;
+      position:relative; z-index:2;
+    }
+    .hero-right {
+      position:relative; overflow:hidden;
+    }
+    .hero-right img {
+      width:100%; height:100%; object-fit:cover; object-position:center;
+      filter:brightness(0.7);
+    }
+    .hero-right::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(to right, var(--black) 0%, transparent 40%);
+    }
+    .hero-eyebrow {
+      font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700;
+      letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:20px;
+    }
+    .hero-title {
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(56px,8vw,112px); line-height:0.88; letter-spacing:1px;
+      color:var(--white); margin-bottom:28px;
+    }
+    .hero-title .accent { color:var(--red); }
+    .hero-sub {
+      font-family:'Barlow',sans-serif; font-size:19px; font-weight:300; line-height:1.65;
+      color:var(--gray-lt); max-width:480px; margin-bottom:48px;
+    }
+    .hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
+    .btn-red {
+      font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700;
+      letter-spacing:2px; text-transform:uppercase;
+      background:var(--red); color:var(--white); padding:16px 36px;
+      text-decoration:none; transition:background 0.2s; display:inline-block;
+    }
+    .btn-red:hover { background:var(--red-lt); }
+    .btn-outline {
+      font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700;
+      letter-spacing:2px; text-transform:uppercase;
+      border:1px solid var(--gold); color:var(--gold); padding:16px 36px;
+      text-decoration:none; transition:all 0.2s; display:inline-block;
+    }
+    .btn-outline:hover { background:var(--gold); color:var(--black); }
+
+    /* TICKER */
+    .ticker-wrap { background:var(--red); overflow:hidden; white-space:nowrap; padding:12px 0; }
+    .ticker-track { display:inline-flex; animation:ticker 28s linear infinite; }
+    .ticker-item {
+      font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700;
+      letter-spacing:3px; text-transform:uppercase; color:var(--black); padding:0 40px;
+    }
+
+    /* SECTIONS - alternating light/dark */
+    .section-light { background:var(--white); padding:100px 56px; }
+    .section-dark { background:var(--charcoal); padding:100px 56px; color:var(--white); }
+    .section-mid { background:#f0ede8; padding:100px 56px; }
+
+    .section-label {
+      font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700;
+      letter-spacing:4px; text-transform:uppercase; margin-bottom:12px;
+    }
+    .section-light .section-label, .section-mid .section-label { color:var(--red); }
+    .section-dark .section-label { color:var(--gold); }
+
+    .rule-red { width:40px; height:3px; background:var(--red); margin-bottom:28px; }
+    .rule-gold { width:40px; height:3px; background:var(--gold); margin-bottom:28px; }
+
+    .section-title {
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(36px,5vw,64px); line-height:1; letter-spacing:1px; margin-bottom:20px;
+    }
+    .section-light .section-title, .section-mid .section-title { color:var(--black); }
+    .section-dark .section-title { color:var(--white); }
+    .section-title .red { color:var(--red); }
+    .section-title .gold { color:var(--gold); }
+
+    .section-body {
+      font-size:17px; font-weight:300; line-height:1.75; max-width:680px;
+    }
+    .section-light .section-body, .section-mid .section-body { color:#444; }
+    .section-dark .section-body { color:var(--gray-lt); }
+
+    /* TWO-COL LAYOUT */
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .two-col.reverse { direction:rtl; }
+    .two-col.reverse > * { direction:ltr; }
+
+    /* PHOTO */
+    .section-photo { position:relative; overflow:hidden; }
+    .section-photo img { width:100%; height:460px; object-fit:cover; display:block; }
+    .section-light .section-photo img { filter:brightness(0.92) contrast(1.05); }
+    .section-dark .section-photo img { filter:brightness(0.75) contrast(1.1); }
+
+    /* CHECKLIST */
+    .check-list { list-style:none; display:flex; flex-direction:column; gap:14px; margin-top:24px; }
+    .check-list li {
+      font-size:16px; font-weight:400; line-height:1.5;
+      padding-left:28px; position:relative;
+    }
+    .section-light .check-list li, .section-mid .check-list li { color:#333; }
+    .section-dark .check-list li { color:var(--gray-lt); }
+    .check-list li::before {
+      content:'—'; position:absolute; left:0;
+      font-weight:700;
+    }
+    .section-light .check-list li::before, .section-mid .check-list li::before { color:var(--red); }
+    .section-dark .check-list li::before { color:var(--gold); }
+
+    /* FORMAT CARDS */
+    .format-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px; }
+    .format-card {
+      padding:48px 40px; position:relative; overflow:hidden;
+    }
+    .format-card.onsite { background:var(--deep); }
+    .format-card.offsite { background:var(--red); }
+    .format-card::before {
+      content:attr(data-label);
+      position:absolute; top:-10px; right:16px;
+      font-family:'Bebas Neue',sans-serif; font-size:100px;
+      color:rgba(255,255,255,0.04); line-height:1;
+    }
+    .format-type {
+      font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700;
+      letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:16px;
+    }
+    .format-card.offsite .format-type { color:rgba(255,255,255,0.7); }
+    .format-name {
+      font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--white); margin-bottom:16px;
+    }
+    .format-desc { font-size:15px; font-weight:300; color:var(--gray-lt); line-height:1.7; margin-bottom:24px; }
+    .format-card.offsite .format-desc { color:rgba(255,255,255,0.85); }
+    .format-perks { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .format-perks li { font-size:14px; font-weight:300; color:var(--gray-lt); padding-left:20px; position:relative; }
+    .format-perks li::before { content:'✓'; position:absolute; left:0; color:var(--gold); font-weight:700; }
+    .format-card.offsite .format-perks li { color:rgba(255,255,255,0.85); }
+    .format-card.offsite .format-perks li::before { color:rgba(255,255,255,0.6); }
+
+    /* INCLUDED GRID */
+    .included-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:48px; }
+    .included-item {
+      background:var(--deep); padding:36px 28px;
+      border-top:3px solid transparent; transition:border-color 0.2s;
+    }
+    .included-item:hover { border-color:var(--gold); }
+    .included-icon { font-size:28px; margin-bottom:16px; }
+    .included-title {
+      font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:700;
+      letter-spacing:1px; text-transform:uppercase; color:var(--white); margin-bottom:8px;
+    }
+    .included-desc { font-size:14px; font-weight:300; color:var(--gray); line-height:1.6; }
+
+    /* USE CASES */
+    .use-cases-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:48px; }
+    .use-case {
+      background:var(--panel); padding:36px 28px;
+      border-bottom:3px solid var(--border); transition:border-color 0.2s;
+    }
+    .use-case:hover { border-color:var(--red); }
+    .use-case-num {
+      font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--red);
+      line-height:1; margin-bottom:12px; opacity:0.4;
+    }
+    .use-case-title {
+      font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700;
+      letter-spacing:1px; text-transform:uppercase; color:var(--white); margin-bottom:8px;
+    }
+    .use-case-desc { font-size:13px; font-weight:300; color:var(--gray); line-height:1.6; }
+
+    /* CUSTOMIZATION SECTION */
+    .custom-split { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px; }
+    .custom-panel {
+      padding:56px 48px;
+    }
+    .custom-panel.dark { background:var(--black); }
+    .custom-panel.light { background:var(--gold); }
+    .custom-panel.light .section-title { color:var(--black); }
+    .custom-panel.light .section-body { color:rgba(0,0,0,0.7); }
+    .custom-panel.light .check-list li { color:rgba(0,0,0,0.8); }
+    .custom-panel.light .check-list li::before { color:var(--black); }
+
+    /* CTA SECTION */
+    .cta-section {
+      background:var(--black); padding:120px 56px; text-align:center;
+      position:relative; overflow:hidden;
+    }
+    .cta-section::before {
+      content:''; position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(192,39,45,0.15) 0%, transparent 70%);
+    }
+    .cta-section .section-title { color:var(--white); position:relative; }
+    .cta-section .section-body { color:var(--gray-lt); margin:0 auto 48px; position:relative; }
+    .cta-actions { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; position:relative; }
+
+    /* PHOTO STRIP */
+    .photo-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
+    .photo-strip img { width:100%; height:300px; object-fit:cover; filter:brightness(0.8) contrast(1.05); transition:filter 0.3s; }
+    .photo-strip img:hover { filter:brightness(1) contrast(1.05); }
+
+    /* FOOTER */
+    footer {
+      background:var(--charcoal); padding:36px 56px;
+      display:flex; justify-content:space-between; align-items:center;
+      border-top:1px solid rgba(255,255,255,0.04);
+    }
+    .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:3px; color:var(--white); }
+    .footer-logo span { color:var(--red); }
+    .footer-copy { font-family:'Barlow',sans-serif; font-size:12px; color:var(--gray); }
+    .footer-hti { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gray); }
+    .footer-hti a { color:var(--gold); text-decoration:none; }
+
+    /* ANIMATIONS */
+    @keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+    /* RESPONSIVE */
+    @media (max-width:900px) {
+      nav { padding:16px 24px; }
+      .hero { grid-template-columns:1fr; min-height:auto; }
+      .hero-left { padding:120px 24px 56px; }
+      .hero-right { height:50vw; }
+      .section-light, .section-dark, .section-mid { padding:72px 24px; }
+      .two-col, .format-grid, .custom-split { grid-template-columns:1fr; gap:32px; }
+      .two-col.reverse { direction:ltr; }
+      .included-grid { grid-template-columns:1fr 1fr; }
+      .use-cases-grid { grid-template-columns:1fr 1fr; }
+      .photo-strip { grid-template-columns:1fr; }
+      .photo-strip img { height:240px; }
+      footer { flex-direction:column; gap:12px; text-align:center; padding:28px 20px; }
+    }
+    @media (max-width:480px) {
+      .included-grid, .use-cases-grid { grid-template-columns:1fr; }
+      .hero-actions { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div>
+      <a href="/" class="nav-logo">CHEF <span>BATTLE</span></a>
+      <div class="nav-tag">Corporate Team Building</div>
+    </div>
+    <a href="mailto:chefbattle@hoptoit.events" class="nav-cta">Request a Proposal</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Chef Battle · Corporate Experiences</div>
+      <h1 class="hero-title">
+        BRING YOUR<br>TEAM <span class="accent">TOGETHER</span><br>THROUGH REAL<br>COLLABORATION
+      </h1>
+      <p class="hero-sub">
+        A live, team-based experience where employees work together to solve challenges, make decisions under pressure, and deliver results — together.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:chefbattle@hoptoit.events?subject=Corporate Team Building Proposal" class="btn-red">Request a Proposal</a>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item">Team Building · </span>
+      <span class="ticker-item">Real Collaboration · </span>
+      <span class="ticker-item">High-Energy Experience · </span>
+      <span class="ticker-item">On-Site &amp; Off-Site · </span>
+      <span class="ticker-item">Fully Managed · </span>
+      <span class="ticker-item">Leadership Offsites · </span>
+      <span class="ticker-item">Sales Kickoffs · </span>
+      <span class="ticker-item">Team Building · </span>
+      <span class="ticker-item">Real Collaboration · </span>
+      <span class="ticker-item">High-Energy Experience · </span>
+      <span class="ticker-item">On-Site &amp; Off-Site · </span>
+      <span class="ticker-item">Fully Managed · </span>
+      <span class="ticker-item">Leadership Offsites · </span>
+      <span class="ticker-item">Sales Kickoffs · </span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: WHAT IT IS -->
+  <section class="section-light" id="what-it-is">
+    <div class="two-col">
+      <div>
+        <div class="section-label">What It Is</div>
+        <div class="rule-red"></div>
+        <h2 class="section-title">A TEAM EXPERIENCE THAT ACTUALLY <span class="red">WORKS</span></h2>
+        <p class="section-body">
+          Chef Battle is more than a cooking competition — it's a structured, high-energy environment where teams collaborate in real time to solve challenges and execute under pressure.
+        </p>
+        <p class="section-body" style="margin-top:20px;">
+          Participants aren't just following instructions. They're making real decisions, under real constraints, as a real team.
+        </p>
+        <ul class="check-list" style="margin-top:32px;">
+          <li>Aligning on strategy before time runs out</li>
+          <li>Delegating roles based on strengths</li>
+          <li>Adapting when things don't go as planned</li>
+          <li>Delivering a final outcome as a team</li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 2: HOW IT WORKS -->
+  <section class="section-dark" id="how-it-works">
+    <div class="two-col reverse">
+      <div>
+        <div class="section-label">How It Works</div>
+        <div class="rule-gold"></div>
+        <h2 class="section-title">BUILT FOR COLLABORATION, NOT JUST <span class="gold">PARTICIPATION</span></h2>
+        <p class="section-body">
+          Teams are given a shared objective, limited resources, and a defined time frame. From there, success depends entirely on how well the team works together.
+        </p>
+        <ul class="check-list" style="margin-top:32px;">
+          <li>Communication under pressure</li>
+          <li>Real-time decision-making</li>
+          <li>Leadership that emerges organically</li>
+          <li>Execution from start to finish</li>
+        </ul>
+        <p class="section-body" style="margin-top:28px;">
+          Each experience is facilitated end-to-end — ensuring every team is engaged and every participant plays a meaningful role.
+        </p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 3: WHY IT WORKS -->
+  <section class="section-mid" id="why-it-works">
+    <div class="section-label">Why It Works</div>
+    <div class="rule-red"></div>
+    <h2 class="section-title">DESIGNED FOR REAL TEAM <span class="red">DYNAMICS</span></h2>
+    <p class="section-body" style="margin-bottom:56px;">
+      Unlike passive activities, Chef Battle creates an environment where teams must actively work together to succeed. The shared pressure produces real moments of leadership, communication, and trust — and those moments carry beyond the event.
+    </p>
+    <div class="use-cases-grid">
+      <div class="use-case">
+        <div class="use-case-num">01</div>
+        <div class="use-case-title">Cross-Functional Teams</div>
+        <div class="use-case-desc">Break down silos. Put people together who don't normally work side by side and watch new dynamics emerge.</div>
+      </div>
+      <div class="use-case">
+        <div class="use-case-num">02</div>
+        <div class="use-case-title">Newly Formed Groups</div>
+        <div class="use-case-desc">Fast-track trust. New teams need shared experience — Chef Battle creates it in hours, not months.</div>
+      </div>
+      <div class="use-case">
+        <div class="use-case-num">03</div>
+        <div class="use-case-title">Leadership Offsites</div>
+        <div class="use-case-desc">Strip away titles. In the kitchen, leadership is earned — not assigned. See who rises to the moment.</div>
+      </div>
+      <div class="use-case">
+        <div class="use-case-num">04</div>
+        <div class="use-case-title">Sales &amp; Ops Alignment</div>
+        <div class="use-case-desc">A shared challenge is one of the fastest ways to align teams that normally operate in different lanes.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FORMATS -->
+  <section class="section-dark" id="formats">
+    <div class="section-label">Experience Formats</div>
+    <div class="rule-gold"></div>
+    <h2 class="section-title">FLEXIBLE FORMATS TO FIT <span class="gold">YOUR TEAM</span></h2>
+    <p class="section-body">We meet you where you are — whether that's your office or an elevated offsite venue.</p>
+    <div class="format-grid">
+      <div class="format-card onsite" data-label="01">
+        <div class="format-type">Format One</div>
+        <div class="format-name">ON-SITE</div>
+        <p class="format-desc">We bring the full Chef Battle experience directly to your office or meeting space — no logistics headaches, no travel required.</p>
+        <ul class="format-perks">
+          <li>Minimal disruption to your schedule</li>
+          <li>Easy to integrate into team days or all-hands</li>
+          <li>We handle all setup and breakdown</li>
+          <li>Ideal for mid-sized teams and internal events</li>
+        </ul>
+      </div>
+      <div class="format-card offsite" data-label="02">
+        <div class="format-type">Format Two</div>
+        <div class="format-name">OFF-SITE</div>
+        <p class="format-desc">A more immersive experience hosted at a curated venue — elevated environment, expanded production, and a full event atmosphere.</p>
+        <ul class="format-perks">
+          <li>Elevated setting amplifies the energy</li>
+          <li>Expanded format with full production</li>
+          <li>Ideal for leadership teams and annual offsites</li>
+          <li>Can accommodate larger groups</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: WHAT'S INCLUDED -->
+  <section class="section-dark" id="whats-included" style="padding-top:0;">
+    <div class="section-label">What's Included</div>
+    <div class="rule-gold"></div>
+    <h2 class="section-title">FULLY MANAGED. <span class="gold">END-TO-END.</span></h2>
+    <p class="section-body">We handle everything — from setup to facilitation — so your team can focus entirely on the experience.</p>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-icon">🎯</div>
+        <div class="included-title">Challenge Design</div>
+        <div class="included-desc">Team-based challenges built around real collaboration dynamics — not just a recipe to follow.</div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">🥩</div>
+        <div class="included-title">All Ingredients &amp; Equipment</div>
+        <div class="included-desc">Everything your teams need to compete — sourced, prepped, and ready to go.</div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">⚙️</div>
+        <div class="included-title">Setup &amp; Breakdown</div>
+        <div class="included-desc">We arrive early and leave clean. Zero logistics burden on your team.</div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">🎤</div>
+        <div class="included-title">Professional Host</div>
+        <div class="included-desc">An experienced emcee keeps the energy high and the experience moving from start to finish.</div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">⚖️</div>
+        <div class="included-title">Judging &amp; Awards</div>
+        <div class="included-desc">A structured judging process with real scoring, real results, and a moment your team won't forget.</div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">📋</div>
+        <div class="included-title">Facilitation</div>
+        <div class="included-desc">On-site facilitators ensure every participant is engaged and every team has what they need.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: CUSTOMIZATION -->
+  <div class="custom-split">
+    <div class="custom-panel dark">
+      <div class="section-label" style="color:var(--gold);">Customization</div>
+      <div class="rule-gold"></div>
+      <h2 class="section-title" style="color:var(--white);">TAILORED TO <span class="gold">YOUR TEAM</span></h2>
+      <p class="section-body" style="margin-bottom:32px;">
+        Each experience can be built to reflect your organization's culture, values, and goals — not a generic off-the-shelf package.
+      </p>
+      <ul class="check-list">
+        <li>Branded materials and team stations</li>
+        <li>Custom challenge themes tied to company goals</li>
+        <li>Integration of company values or messaging</li>
+        <li>Optional takeaways and custom awards</li>
+      </ul>
+    </div>
+    <div class="custom-panel light">
+      <div class="section-label" style="color:rgba(0,0,0,0.5);">Where It Fits Best</div>
+      <div style="width:40px;height:3px;background:rgba(0,0,0,0.3);margin-bottom:28px;"></div>
+      <h2 class="section-title">IDEAL <span style="color:rgba(0,0,0,0.4);">USE CASES</span></h2>
+      <ul class="check-list" style="margin-top:8px;">
+        <li style="color:var(--black);">Team building days and company retreats</li>
+        <li style="color:var(--black);">Sales meetings and annual kickoffs</li>
+        <li style="color:var(--black);">Leadership offsites and executive programs</li>
+        <li style="color:var(--black);">Departmental alignment sessions</li>
+        <li style="color:var(--black);">New hire onboarding and orientation</li>
+        <li style="color:var(--black);">Client entertainment and partner events</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="section-label" style="color:var(--gold);position:relative;">Let's Build Something</div>
+    <h2 class="section-title" style="max-width:700px;margin:12px auto 20px;font-size:clamp(40px,6vw,80px);">
+      BRING CHEF BATTLE<br>TO YOUR <span class="accent" style="color:var(--red);">TEAM</span>
+    </h2>
+    <p class="section-body" style="max-width:520px;margin:0 auto 48px;position:relative;">
+      Let's build an experience tailored to your group. Every proposal starts with a conversation.
+    </p>
+    <div class="cta-actions">
+      <a href="mailto:chefbattle@hoptoit.events?subject=Corporate Team Building Proposal Request" class="btn-red">Request a Proposal</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">CHEF <span>BATTLE</span></div>
+    <div class="footer-copy">A Hop To It Events Production</div>
+    <div class="footer-hti"><a href="https://hoptoit.events" target="_blank">hoptoit.events</a></div>
+  </footer>
+
+</body>
+</html>
