@@ -327,6 +327,10 @@
     .custom-panel.light .section-body { color:rgba(0,0,0,0.7); }
     .custom-panel.light .check-list li { color:rgba(0,0,0,0.8); }
     .custom-panel.light .check-list li::before { color:var(--black); }
+    @media (max-width: 900px) {
+      .custom-split { grid-template-columns: 1fr; gap: 0; margin-top: 0; }
+      .custom-panel { padding: 56px 24px; }
+    }
 
     /* CTA SECTION */
     .cta-section {
@@ -405,7 +409,7 @@
       .hero-left { padding:120px 24px 56px; }
       .hero-right { height:50vw; }
       .section-light, .section-dark, .section-mid { padding:72px 24px; }
-      .two-col, .format-grid, .custom-split { grid-template-columns:1fr; gap:32px; }
+      .two-col, .format-grid { grid-template-columns:1fr; gap:32px; }
       .two-col.reverse { direction:ltr; }
       .included-grid { grid-template-columns:1fr 1fr; }
       .use-cases-grid { grid-template-columns:1fr 1fr; }
