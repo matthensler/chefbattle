@@ -3,12 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chef Battle Corporate Team Building | Hop To It Events</title>
-  <meta name="description" content="Chef Battle corporate team building experiences — live, high-energy culinary challenges that build real collaboration, communication, and leadership skills." />
-  <meta name="robots" content="index, follow" />
+  <title>Corporate Team Building Experiences | Chef Battle | Hop To It Events</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Chef Battle corporate team building — a live, fully managed culinary competition where teams collaborate under pressure. On-site or off-site. Available nationwide." />
+  <meta name="keywords" content="corporate team building, culinary team building, cooking team building event, executive offsite, leadership team building, Chef Battle corporate, team building activity, Hop To It Events" />
+  <meta name="author" content="Hop To It Events" />
   <link rel="canonical" href="https://chefbattle.events/team-building" />
-  <meta property="og:title" content="Chef Battle Corporate Team Building" />
-  <meta property="og:description" content="A live culinary team experience that builds real collaboration. Fully managed, end-to-end. On-site or off-site." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- GEO targeting -->
+  <meta name="geo.region" content="US" />
+  <meta name="geo.placename" content="United States" />
+  <meta name="ICBM" content="37.09024, -95.712891" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chefbattle.events/team-building" />
+  <meta property="og:title" content="Corporate Team Building | Chef Battle" />
+  <meta property="og:description" content="A live culinary team experience that builds real collaboration under pressure. Fully managed, on-site or off-site, available nationwide." />
+  <meta property="og:image" content="https://chefbattle.events/og-image.jpg" />
+  <meta property="og:site_name" content="Chef Battle" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://chefbattle.events/team-building" />
+  <meta name="twitter:title" content="Corporate Team Building | Chef Battle" />
+  <meta name="twitter:description" content="Live culinary team building. Real collaboration. Real pressure. Fully managed. On-site or off-site nationwide." />
+  <meta name="twitter:image" content="https://chefbattle.events/og-image.jpg" />
+
+  <!-- Structured Data: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Chef Battle Corporate Team Building",
+    "description": "A live, fully managed culinary competition experience where corporate teams collaborate under pressure. Available on-site or off-site nationwide.",
+    "url": "https://chefbattle.events/team-building",
+    "provider": {
+      "@type": "Organization",
+      "name": "Hop To It Events",
+      "url": "https://hoptoit.events",
+      "email": "chefbattle@hoptoit.events"
+    },
+    "serviceType": "Corporate Team Building",
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Corporate Teams, Leadership Groups, Sales Teams"
+    }
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Chef Battle corporate team building?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chef Battle is a live, structured culinary competition where teams collaborate under real pressure to plan, execute, and deliver a dish. It builds communication, leadership, and decision-making skills in a high-energy format."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Chef Battle come to our office?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Chef Battle offers both on-site experiences brought directly to your office or meeting space, and off-site experiences at curated venues. We handle all setup, equipment, facilitation, and breakdown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in the Chef Battle team building experience?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every experience includes challenge design, all ingredients and equipment, on-site setup and breakdown, a professional host and facilitators, and judging and awards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Chef Battle team building available nationwide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Chef Battle operates across 20+ markets nationwide and can bring the full team building experience to your location anywhere in the United States."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -273,8 +363,44 @@
     @keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 
     /* RESPONSIVE */
+    /* HAMBURGER */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 99;
+      background: rgba(10,10,10,0.97);
+      flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Bebas Neue', sans-serif; font-size: 44px; letter-spacing: 3px;
+      color: var(--white); text-decoration: none; transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-menu .m-cta {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      background: var(--red); color: var(--white); padding: 16px 48px;
+    }
+
+    /* TABLET */
+    @media (max-width: 1100px) {
+      .use-cases-grid { grid-template-columns: 1fr 1fr; }
+      .craft-grid { grid-template-columns: 1fr 1fr; }
+      .craft-grid img { height: 240px; }
+    }
+
     @media (max-width:900px) {
       nav { padding:16px 24px; }
+      .nav-links-desktop { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
       .hero { grid-template-columns:1fr; min-height:auto; }
       .hero-left { padding:120px 24px 56px; }
       .hero-right { height:50vw; }
@@ -283,13 +409,20 @@
       .two-col.reverse { direction:ltr; }
       .included-grid { grid-template-columns:1fr 1fr; }
       .use-cases-grid { grid-template-columns:1fr 1fr; }
-      .photo-strip { grid-template-columns:1fr; }
-      .photo-strip img { height:240px; }
+      .craft-grid { grid-template-columns: 1fr 1fr; }
+      .craft-grid img { height: 200px; }
       footer { flex-direction:column; gap:12px; text-align:center; padding:28px 20px; }
+      .cta-section { padding: 72px 24px; }
+      .cta-actions { flex-direction: column; align-items: center; }
     }
     @media (max-width:480px) {
       .included-grid, .use-cases-grid { grid-template-columns:1fr; }
       .hero-actions { flex-direction:column; }
+      .craft-grid { grid-template-columns: 1fr; }
+      .craft-grid img { height: 220px; }
+      .hero-title { font-size: 56px; }
+      .section-title { font-size: 36px; }
+      .format-card { padding: 32px 24px; }
     }
 
     /* PHOTO STRIP */
@@ -328,7 +461,19 @@
       <div class="nav-tag">Corporate Team Building</div>
     </div>
     <a href="mailto:chefbattle@hoptoit.events" class="nav-cta">Request a Proposal</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#what-it-is" class="mobile-link">What It Is</a>
+    <a href="#how-it-works" class="mobile-link">How It Works</a>
+    <a href="#formats" class="mobile-link">Formats</a>
+    <a href="#whats-included" class="mobile-link">Included</a>
+    <a href="mailto:chefbattle@hoptoit.events" class="m-cta">Request a Proposal</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -371,7 +516,7 @@
   </div>
 
   <!-- SECTION 1: WHAT IT IS -->
-  <section class="section-light" id="what-it-is">
+  <section class="section-light" id="what-it-is" style="padding:100px 56px;">
     <div class="two-col">
       <div>
         <div class="section-label">What It Is</div>
@@ -580,5 +725,21 @@
     <div class="footer-hti"><a href="https://hoptoit.events" target="_blank">hoptoit.events</a></div>
   </footer>
 
+  <script>
+    const hb = document.getElementById('hamburger');
+    const mm = document.getElementById('mobileMenu');
+    hb.addEventListener('click', () => {
+      hb.classList.toggle('open');
+      mm.classList.toggle('open');
+      document.body.style.overflow = mm.classList.contains('open') ? 'hidden' : '';
+    });
+    document.querySelectorAll('.mobile-link, .m-cta').forEach(l => {
+      l.addEventListener('click', () => {
+        hb.classList.remove('open');
+        mm.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
 </body>
 </html>
